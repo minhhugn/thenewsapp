@@ -1,11 +1,7 @@
 package com.example.thenewsapp.ui.register
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.thenewsapp.R
 import com.example.thenewsapp.databinding.ActivityLoginBinding
 import android.content.Intent
 import android.widget.Toast
@@ -42,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.signupRedirectText.setOnClickListener {
-            startActivity(Intent(this, NewsActivity::class.java))
+            startActivity(Intent(this, SignupActivity::class.java))
         }
     }
 }
