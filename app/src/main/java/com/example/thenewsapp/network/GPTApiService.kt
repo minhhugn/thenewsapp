@@ -15,4 +15,11 @@ interface GPTApiService {
     )
     @POST("v1beta/models/gemini-2.0-flash:generateContent") // Thay đổi endpoint
     fun sendRequest(@Body request: GPTRequest): Call<GPTResponse>
+
+    @Headers(
+        "Content-Type: application/json",
+        "x-goog-api-key: AIzaSyB5h4XL0oIdGGO7QWpZYhm3R1XrjPMiwI4" // Thay thế YOUR_GEMINI_API_KEY
+    )
+    @POST("v1beta/models/gemini-2.0-flash:generateContent") // Thay đổi endpoint
+    fun getGeminiResponse(@Body requestBody: GPTRequest): Call<GPTResponse>
 }
