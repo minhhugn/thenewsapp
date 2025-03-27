@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/light_gray">
+
+    <!-- Nút back góc trên cùng bên phải -->
+    <ImageButton
+        android:id="@+id/buttonBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:padding="8dp"
+        android:contentDescription="Back Button" />
+
+    <!-- TextView ở giữa màn hình -->
+
+    <!-- Khu vực nhập liệu và gửi yêu cầu, đặt dưới cùng -->
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@+id/bottomInput"
+        android:layout_below="@+id/buttonBack"
+        android:layout_marginBottom="10dp"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:id="@+id/messagesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- EditText (80%) -->
+        <EditText
+            android:id="@+id/editTextMessage"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="4"
+            android:background="@drawable/edittext_bg"
+            android:hint="Write something..."
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="16sp" />
+
+        <!-- Button (20%) -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1">
+
+            <!-- Button nền -->
+            <Button
+                android:id="@+id/button_chatgpt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_bg"
+                android:textColor="@android:color/white"
+                android:text="."/>
+
+            <!-- Icon gửi nằm trên -->
+            <ImageView
+                android:id="@+id/sendIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_send_24"/>
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>
